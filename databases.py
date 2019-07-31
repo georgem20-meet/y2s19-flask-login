@@ -9,10 +9,8 @@ DBSession = sessionmaker(bind=engine)
 session = DBSession()
 
 def add_user(name,secret_word):
-    """Add a user to the DB."""
-    user = User(username=name)
-    #there is a line of code missing here, what else does a user need?
-    session.add(user)
+    user_object = User(username=name, password secret_word)
+    session.add(user_object)
     session.commit()
 
 def get_user(username):
